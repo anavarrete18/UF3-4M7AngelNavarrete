@@ -1,0 +1,8 @@
+1.Investigueu què fan els fitxers package.json i package-lock.json.
+-El package.json es un fitxer que conte la informacio del projecte com el nom del projecte, la versio, la descripcio etc. També conte les llibreries(dependencies) que necessita el projecte.
+
+-El package-lock.json el que emmagatzema totes les dependencies que necessita el projecte per funcionar fixant la versio per al projecte, per quan es fa el git clone nomès fer npm install i instal·lar les dependencies.
+
+2.Investigueu què és la carpeta node_modules.
+-Es on s'emmagatzemen totes les dependencies del projecte instalades.
+ 
