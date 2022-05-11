@@ -6,3 +6,5 @@
 2.Investigueu què és la carpeta node_modules.
 -Es on s'emmagatzemen totes les dependencies del projecte instalades.
  
+3.Llegir la pàgina 4. D’aquí és important comprendre què són els paràmetres req, res i next.
+
