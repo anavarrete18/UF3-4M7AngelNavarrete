@@ -7,4 +7,42 @@
 -Es on s'emmagatzemen totes les dependencies del projecte instalades.
  
 3.Llegir la pàgina 4. D’aquí és important comprendre què són els paràmetres req, res i next.
+req: es el request o la petició. Conte les cabçaleres de solicitud i l'URL de la peticio.Pot contenir un cos de dades.
+res: es la resposta. S'escriu informacio com capçeleres i dades que el volen retornar al client al fer la peticio.
+next: Indica que la solicitud es correcta i esta llista per precessar.
+SDi no es truca a next() la solicitud es queda aturada
+
+Questionari Coneixements:
+
+1. ¿Qué pasos debemos realizar para crear una aplicación web con Express?
+Crear una instancia de una aplicación, escuchar en el servidor
+
+2. ¿Cuál es la mejor manera de enviar una respuesta JSON desde una aplicación Express?
+Llamar al método auxiliar json() en el objeto de respuesta, así: res.json({ content: '' })
+
+
+3. ¿Cómo se podría configurar Express para controlar una solicitud POST con datos JSON?
+Mediante una llamada a app.use(bodyParser.json()) en la parte superior, el registro de una ruta con el método post, como, por ejemplo, app.post(<route>, () =>{}), y la lectura desde req.body
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
