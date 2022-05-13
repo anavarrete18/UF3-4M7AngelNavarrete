@@ -22,7 +22,61 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "GETPRODUCTS",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "144"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"90-ekShgPW00x1wCdUMwmD1+w\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 May 2022 14:08:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"hammer\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"screwdriver\"\n    },\n    null,\n    {\n        \"id\": 3,\n        \"name\": \"wrench\"\n    }\n]"
+				}
+			]
 		},
 		{
 			"name": "GETUSERS",
@@ -41,7 +95,61 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "GETUSERS",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "51"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"33-Dzyza+0OyK/PHx+x5PEpmw\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 May 2022 14:08:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"User Userson\"\n    }\n]"
+				}
+			]
 		},
 		{
 			"name": "GETUSERAUTHORIZED",
@@ -72,7 +180,170 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "GETUSERAUTHORIZED",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "secretpassword",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users?=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "458"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1ca-Zf01/juZTXJ1n3KiMnukug\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 May 2022 14:06:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"username\": \"Angel\",\n        \"password\": \"Angel\",\n        \"email\": \"angel@gmail.com\",\n        \"createdAt\": null,\n        \"updatedAt\": null\n    },\n    {\n        \"id\": 2,\n        \"username\": \"Aiton\",\n        \"password\": \"Aiton\",\n        \"email\": \"aiton@gmail.com\",\n        \"createdAt\": null,\n        \"updatedAt\": null\n    },\n    {\n        \"id\": 3,\n        \"username\": \"Gasbriel\",\n        \"password\": \"Gasbriel\",\n        \"email\": \"gasbriel@gmail.com\",\n        \"createdAt\": null,\n        \"updatedAt\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GETUSERBBDD",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "secretpassword",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/users?=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GETUSERBBDD",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "secretpassword",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/users?=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "458"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1ca-Zf01/juZTXJ1n3KiMnukug\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 May 2022 14:05:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"username\": \"Angel\",\n        \"password\": \"Angel\",\n        \"email\": \"angel@gmail.com\",\n        \"createdAt\": null,\n        \"updatedAt\": null\n    },\n    {\n        \"id\": 2,\n        \"username\": \"Aiton\",\n        \"password\": \"Aiton\",\n        \"email\": \"aiton@gmail.com\",\n        \"createdAt\": null,\n        \"updatedAt\": null\n    },\n    {\n        \"id\": 3,\n        \"username\": \"Gasbriel\",\n        \"password\": \"Gasbriel\",\n        \"email\": \"gasbriel@gmail.com\",\n        \"createdAt\": null,\n        \"updatedAt\": null\n    }\n]"
+				}
+			]
 		}
 	]
 }
