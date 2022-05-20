@@ -2,15 +2,19 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const { User } = require("./models");
+const { User } = require("./models/");
+const { Workers } = require("./models/");
 
 app.get('/', (req, res) => res.send('Hello World!'));
-
-
 
 app.get('/users', isAuthorized, async (req,res) => {
   const users = await User.findAll();
   res.json(users);
+  })
+
+app.get('/workers', alert, async (req,res) => {
+  const workers = await Workers.findAll();
+  res.json(workers);
   })
 /*
 app.get('/users', (req,res) => {
@@ -50,5 +54,9 @@ function isAuthorized(req,res, next) {
     res.send('Not permitted');
   }
 }
-
+function alert(req,res, next) {
+  var d= new Date();
+  console.log("S'han demanat els Workers el " + d.getDay() + "/" + d.getMonth() + "/" + d.getFullYear() + " a les " + d.getHours() + ":" +d.getMinutes() )
+  next();
+}
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

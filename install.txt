@@ -1,0 +1,1 @@
+npm install sequalize mysql2 cors --save

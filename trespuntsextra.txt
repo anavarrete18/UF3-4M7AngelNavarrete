@@ -1,0 +1,71 @@
+El primer que s'hauria de fer es instalar la llibreria sequelize, cors i mysql2 pero com ja les vam instal·lar al model anterior no cal fer-ho un altre vegada.
+El seguent que hem de fer es crear el model que volem fer, en el meu cas serà workers.
+El que tindrà workers d'atributs seria:
+	1. Nom: String
+	2. Cognoms: String
+	3. Edat: Integer
+	4. Password: String
+	5. Email: string
+	6. Any Incorporacio: Date
+El codi es el seguent:
+	npx sequelize-cli model:generate --name Workers --attributes name:string,surnames:string,age:integer,password:string,email:string,ageIncorporation:date
+Desprès hem de executar per a migrar a la BBDD:
+	npx sequelize-cli db:migrate
+Despres de comprovar que s'ha creat a la BBDD hem de crear una seed al VS per crear els workers.
+	npx sequelize-cli seed:generate --name demo-workers
+Al seed que acabem de crear en la part de async up (queryInterface, Sequelize) dins posarem els workers que en el meu cas són:
+    await queryInterface.bulkInsert('workers', [{
+      name: 'Angel',
+      surnames: 'Navarrete Sanchez',
+      age: parseInt(19),
+      password: '1234',
+      email: 'angel@gmail.com',
+      ageIncorporation: new Date('May 05, 2022 03:24:00')
+     }], {});
+     await queryInterface.bulkInsert('workers', [{
+      name: 'Aitor',
+      surnames: 'Fuentes Pulido',
+      age: parseInt(24),
+      password: '1234',
+      email: 'aitor@gmail.com',
+      ageIncorporation: new Date('May 10, 2022 10:55:00')
+     }], {});await queryInterface.bulkInsert('workers', [{
+      name: 'Gabriel',
+      surnames: 'Pedrosa Garcia',
+      age: parseInt(20),
+      password: '1234',
+      email: 'gabriel@gmail.com',
+      ageIncorporation: new Date('May 07, 2022 08:50:00')
+     }], {});
+Executem els seeder amb la comanda:
+	npx sequelize-cli db:seed:all
+Anem al App.js i creem el seguent:
+app.get('/workers', isAuthorized, async (req,res) => {
+  const workers = await Workers.findAll();
+  res.json(workers);
+  })
+Això farà  que quan iniciem l'API podem fer localhost:3000/workers.
+Iniciem la api amb la comanda:
+	node app.js
+Si intentem accedir per la web ens sortirà not Permitted perque necessita autorització i tindrem que anar al Postman.
+Al Postman creem un nou HHTP Request, on posa Enter Request URl posem: http://localhost:3000/workers?= i a headers posem: A Key Authorization i a Value: secretpassword.
+Amb això si cliquem a Send ens retornara els Workers que hem creat abans amb el Seed.
+
+
+Per fer el Middleware que digui a quin dia i hora demana els workers fem el seguent:
+En el app.js creem una funcio que li diem alert i li posem el seguent:
+	function alert(req,res, next) {
+	  var d= new Date();
+	  console.log("S'han demanat els Workers el " + d.getDay() + "/" + d.getMonth() + "/" + d.getFullYear() + " a les " + d.getHours() + ":" +d.getMinutes() )
+	  next();
+	}
+	El que fem es agafar el dia i hora actual i amb el console.log imprimim per la consola. Per formatejar i que surti mes bonic utilitzem les funcions del Date com el .getDay().
+	El next() es per a que continui amb la petició.
+	A app.get("/workers") hem de posar la funcio alert, podem treure la funcio isAuthorizedsi volem:
+	app.get('/workers', alert, async (req,res) => {
+  const workers = await Workers.findAll();
+  res.json(workers);
+  })
+  Ara quan executem la API i posem localhost:3000/workers a la consola sortirà:
+	S'han demanat els Workers el 5/4/2022 a les 16:12
+	
