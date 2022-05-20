@@ -2,7 +2,8 @@
 	"info": {
 		"_postman_id": "e45e9e1d-d261-4da6-988f-e0704d0f5b81",
 		"name": "M7AngelNavarrete",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18571807"
 	},
 	"item": [
 		{
@@ -342,6 +343,104 @@
 					],
 					"cookie": [],
 					"body": "[\n    {\n        \"id\": 1,\n        \"username\": \"Angel\",\n        \"password\": \"Angel\",\n        \"email\": \"angel@gmail.com\",\n        \"createdAt\": null,\n        \"updatedAt\": null\n    },\n    {\n        \"id\": 2,\n        \"username\": \"Aiton\",\n        \"password\": \"Aiton\",\n        \"email\": \"aiton@gmail.com\",\n        \"createdAt\": null,\n        \"updatedAt\": null\n    },\n    {\n        \"id\": 3,\n        \"username\": \"Gasbriel\",\n        \"password\": \"Gasbriel\",\n        \"email\": \"gasbriel@gmail.com\",\n        \"createdAt\": null,\n        \"updatedAt\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GETWORKERS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "secretpassword",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/workers?=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"workers"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GETWORKERS",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "secretpassword",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/workers?=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"workers"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "744"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2e8-nW7x9NxNZE0B5zeQES6JSQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 May 2022 13:55:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Angel\",\n        \"surnames\": \"Navarrete Sanchez\",\n        \"age\": 19,\n        \"password\": \"1234\",\n        \"email\": \"angel@gmail.com\",\n        \"ageIncorporation\": \"2022-05-05T01:24:00.000Z\",\n        \"createdAt\": null,\n        \"updatedAt\": null\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Aitor\",\n        \"surnames\": \"Fuentes Pulido\",\n        \"age\": 24,\n        \"password\": \"1234\",\n        \"email\": \"aitor@gmail.com\",\n        \"ageIncorporation\": \"2022-05-10T08:55:00.000Z\",\n        \"createdAt\": null,\n        \"updatedAt\": null\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Gabriel\",\n        \"surnames\": \"Pedrosa Garcia\",\n        \"age\": 20,\n        \"password\": \"1234\",\n        \"email\": \"gabriel@gmail.com\",\n        \"ageIncorporation\": \"2022-05-07T06:50:00.000Z\",\n        \"createdAt\": null,\n        \"updatedAt\": null\n    }\n]"
 				}
 			]
 		}
